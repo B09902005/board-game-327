@@ -1,0 +1,180 @@
+.gameboard {
+    position: absolute;
+    width: 760px;
+    height: 960px;
+    border: 2px solid black;
+    margin-left: 30px;
+}
+
+.tile {
+    width: 38px;
+    height: 38px;
+    float: left;
+    background-size: 100% 100%;
+    border: 1px solid black;
+}
+
+.tile.nothing {background-color: #FFFFFF;}
+.tile.normal {background-color: #FFFF99;}
+.tile.place {background-color: #FF8888;}
+.tile.ques {background-image: url("images/tile/ques.png");}
+.tile.star {background-image: url("images/tile/star.png");}
+.tile.money {background-image: url("images/tile/money.png");}
+
+.place_text{
+    white-space: nowrap;
+    position: absolute;
+    font-size: 20px;
+    font-weight: bold;
+    color: #FF4444;
+}
+
+
+
+
+button{
+    position: absolute;
+    width: 120px;
+    height: 50px;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    align-items: center;
+}
+.rule{
+    background-color: #4CAF50;
+    margin-left: 850px;
+    margin-top: 30px;
+}
+.restart{
+    background-color: #CC4433;
+    margin-left: 1000px;
+    margin-top: 30px;
+}
+.roll{
+    background-color: #ACAF50;
+    margin-left: 850px;
+    margin-top: 420px;
+    width: 270px;
+}
+.use_star{
+    background-color: #DD5544;
+    margin-left: 850px;
+    margin-top: 500px;
+}
+.door{
+    background-color: #DD5544;
+    margin-left: 1000px;
+    margin-top: 500px;
+}
+.btnOption{
+    width: 200px;
+    background-color: #DD5544;
+    margin-left: 30px;
+}
+
+.modal {
+    display: none;
+    position: absolute;
+    margin-left: 850px;
+    margin-top: 580px;
+    width: 300px;
+    height: 400px;
+    border: 2px solid black;
+    background-color: #CCCCCC;
+    font-size: 20px;
+    box-sizing: border-box;
+    border-radius: 30px;
+}
+
+.big_dice {
+    position: absolute;
+    margin-left: 830px;
+    margin-top: 100px;
+    width: 300px;
+    height: 300px;
+    background-size: 100% 100%;
+}
+
+.card {
+    background-color: #CCCCCC;
+    font-size: 20px;
+    position: absolute;
+    margin-left: 850px;
+    margin-top: 580px;
+    width: 300px;
+    height: 400px;
+    border: 2px solid black;
+    box-sizing: border-box;
+    border-radius: 30px;
+}
+
+
+
+.player_data {
+    position: absolute;
+    width: 300px;
+    height: 1000px;
+    margin-left: 1150px;
+    margin-top: 0px;
+}
+
+.player_status {
+    width: 250px;
+    height: 200px;
+    border: 2px solid black;
+    box-sizing: border-box;
+    margin-left: 20px;
+    margin-top: 30px;
+    border-radius: 30px;
+    font-family: Arial, sans-serif;
+    float: left;
+}
+
+.player_icon {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    opacity: 0.8;
+}
+
+
+.icons {
+    position: relative;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-size: 100% 100%;
+    border-radius: 50%;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+.icons.money {background-image: url("images/list/money.png");}
+.icons.shield {background-image: url("images/list/shield.png");}
+.icons.dice {background-image: url("images/list/dice.png");}
+.icons.buff {background-image: url("images/list/buff.png");}
+
+.icons.buff1 {background-image: url("images/buff/1.png");}
+.icons.buff2 {background-image: url("images/buff/2.png");}
+.icons.buff3 {background-image: url("images/buff/3.png");}
+.icons.buff4 {background-image: url("images/buff/4.png");}
+.icons.buff5 {background-image: url("images/buff/5.png");}
+.icons.buff6 {background-image: url("images/buff/6.png");}
+.icons.buff7 {background-image: url("images/buff/7.png");}
+.icons.buff8 {background-image: url("images/buff/8.png");}
+.icons.buff9 {background-image: url("images/buff/9.png");}
+.icons.buff10 {background-image: url("images/buff/10.png");}
+
+.icons.buff1:hover::before{position: absolute; content: '可以免費將？卡嫁禍於人'; top: 20px; left:-50px; width: 150px;}
+.icons.buff2:hover::before{position: absolute; content: '他人無法用嫁禍無效卡來抵擋你的嫁禍'; top: 20px; left:-50px; width: 150px;}
+.icons.buff3:hover::before{position: absolute; content: '無限量嫁禍無效卡'; top: 20px; left:-50px; width: 150px;}
+.icons.buff4:hover::before{position: absolute; content: '到達星星格時，可一次抽兩張道具卡'; top: 20px; left:-50px; width: 150px;}
+.icons.buff5:hover::before{position: absolute; content: '每回合結束後獲得10元'; top: 20px; left:-50px; width: 150px;}
+.icons.buff6:hover::before{position: absolute; content: '金錢的收入加倍'; top: 20px; left:-50px; width: 150px;}
+.icons.buff7:hover::before{position: absolute; content: '每回移動步數+3 (控骰卡除外)'; top: 20px; left:-50px; width: 150px;}
+.icons.buff8:hover::before{position: absolute; content: '每次被有效嫁禍時，可抽一張道具卡'; top: 20px; left:-50px; width: 150px;}
+.icons.buff9:hover::before{position: absolute; content: '踩在有其他人的格子時，可搶走他至多50元'; top: 20px; left:-50px; width: 150px;}
+.icons.buff10:hover::before{position: absolute; content: '使用傳送門的所需費用折半'; top: 20px;  left:-50px; width: 150px;}
+

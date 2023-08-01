@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>桌遊線上化測試</title>
+    <link href = "style.css" rel = "stylesheet" type = "text/css">
+</head>
+<body>
+    
+    <div class="gameboard" id="gameboard">
+        <script src = "data.js"></script>
+        <script> add_tiles() </script>
+        <script> add_board_text() </script>
+    </div>
+    
+    <button onclick="rule()" class="rule"> 查看遊戲規則 </button>
+    <button onclick="restart()" class="restart"> 重新一局遊戲 </button>
+        
+    <div class="big_dice"> </div>
+    <img id="big_dice" class="big_dice" src="images/dice/1.png">
+    <button onclick="roll()" class="roll" id="roll" disabled> 骰骰子移動 </button>
+    <button onclick="openmodal2(who)" class="use_star" id="use_star" disabled> 用控骰卡移動 </button>
+    <button onclick="openmodal()" class="door" id="door" disabled> 用傳送門移動 </button>
+    <div class="card" id="card"> </div>
+            
+    <div class="player_data", id="player_data"></div>
+    <script src = "main.js"></script>
+    <script src = "button.js"></script>
+    <script> start_game() </script>
+    
+    <div id="myModal" class="modal"></div>
+    <div id="myModal2" class="modal"></div>
+    <div id="target_modal"></div>
+
+</body>
+</html>
