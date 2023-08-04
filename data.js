@@ -71,6 +71,7 @@ function get_player_data(data){
 // 建立玩家資料
 function add_player_data(){
     var player_data = document.getElementById("player_data");
+    if (playerData.length > 4) player_data.style.width = 600 + 'px';
     for (var i = 0; i < playerData.length; i++) {
         var player = document.createElement("div");
         player.className = "player_status";
@@ -82,7 +83,7 @@ function add_player_data(){
         player_icon.className = "player_icon";
         player_icon.id = playerData[i].name + "_icon";
         player_icon.style.marginLeft = 40 * playerData[i].x + i % 2 * 10 + 30 + "px";
-        player_icon.style.marginTop = 40 * playerData[i].y + Math.floor(i/2) * 10 + "px";
+        player_icon.style.marginTop = 40 * playerData[i].y + Math.floor(i%4/2) * 10 + "px";
         player_icon.src = "images/player/" + (i+1) + ".png";
         document.body.appendChild(player_icon);
                                                                         
@@ -122,9 +123,9 @@ function init(){
                 {id:22, money: 100, title: "魯神的造訪", description:"被遊戲作者的強大魯蛇力傳染，大幅增加你到北一女的難度", effect: "失去所有道具卡"},
                 {id:23, money: 50, title: "松鼠的逆襲", description:"你的控骰卡放在教室的桌上，被松鼠給咬走了", effect: "失去所有控骰卡"},
                 {id:24, money: 50, title: "現充爆炸吧", description:"遊戲作者為了保護你免於爆炸，好心賜予你這張卡片", effect: "失去所有永久效果卡"},
-                {id:25, money: 10, title: "BUG", description:"遊戲出bug，導致玩家的位置被弄亂了", effect: "與離北一女最近的對手交換位置"},
-                {id:26, money: 10, title: "有錢人的生活", description:"拿到這張卡，可以讓你瞬間變成有錢人哦！", effect: "與最有錢的對手交換金錢數量"},
-                {id:27, money: 10, title: "輪換物資", description:"班上舉行聖誕節的交換禮物，而你準備了你的道具卡當禮物", effect: "與最多道具卡的對手交換所有道具卡"},
+                {id:25, money: 10, title: "BUG", description:"遊戲出bug，導致玩家的位置被弄亂了", effect: "與隨機一位離北一女最近的對手交換位置"},
+                {id:26, money: 10, title: "有錢人的生活", description:"拿到這張卡，可以讓你瞬間變成有錢人哦！", effect: "與隨機一位最有錢的對手交換金錢數量"},
+                {id:27, money: 10, title: "輪換物資", description:"班上舉行聖誕節的交換禮物，而你準備了你的道具卡當禮物", effect: "與隨機一位有最多道具卡的對手交換所有道具卡"},
                 {id:28, money: 100, title: "兩張", description:"沒有什麼事是用一張道具卡解決不了的。如果有，那就用兩張", effect: "獲得兩張道具卡"},
                 {id:29, money: 100, title: "班導的禮物", description:"你在2月30日這天去班導家玩，他送你兩張道具卡當作禮物", effect: "獲得兩張道具卡"}
             ];

@@ -95,19 +95,21 @@ function output_player(player){
     p.innerHTML = get_player_data(player);
     var player_icon = document.getElementById(player.name + "_icon");
     player_icon.style.marginLeft = 40 * player.x + player.id % 2 * 10 + 30 + "px";
-    player_icon.style.marginTop = 40 * player.y + Math.floor(player.id/2) * 10 + "px";
+    player_icon.style.marginTop = 40 * player.y + Math.floor(player.id%4/2) * 10 + "px";
 }
 
 async function start_game(){
     init();
     console.log("遊戲開始");
-    do people = parseInt(prompt("請輸入遊戲人數？(只能是0到4的整數)", ""),10);
-    while ((isNaN(people)) || (people < 0) || (people > 4));
+    do people = parseInt(prompt("請輸入真人數量？(只能是0到8的整數)", ""),10);
+    while ((isNaN(people)) || (people < 0) || (people > 8));
+    do ai = parseInt(prompt("請輸入AI數量？(真人+AI要在2到8之間)", ""),10);
+    while ((isNaN(ai)) || (people+ai < 2) || (people+ai > 8));
+    playerData = [];
+    playername = ["玩家一","玩家二","玩家三","玩家四","玩家五","玩家六","玩家七","玩家八"];
+    for (var i = 0; i < people; i++) playerData.push({ name: playername[i], id: i, person: true, money: 0, shield: 0, dice: [], buff:[], x: 0, y: 23 });
+    for (var i = 0; i < ai; i++) playerData.push({ name: playername[people+i], id: people+i, person: false, money: 0, shield: 0, dice: [], buff:[], x: 0, y: 23 });
     add_player_data();
-    for (var i = 0; i < playerData.length; i++){
-        if (i < people) playerData[i].person = true;
-        output_player(playerData[i]);
-    }
     my_turn(0);
 }
 

@@ -118,8 +118,8 @@ async function use_ques(ques, player){
         player.buff = [];
     }
     if (ques.id == 25){
-        var tempid = (player.id+1)%4;
-        for (var i=0 ; i<4 ; i++){
+        var tempid = (player.id+1)%playerData.length;
+        for (var i=0 ; i<playerData.length ; i++){
             if (playerData[i].name == player.name) continue;
             if (distance_to_terminal(playerData[i].x, playerData[i].y) < distance_to_terminal(playerData[tempid].x, playerData[tempid].y)) tempid = i;
         }
@@ -137,8 +137,8 @@ async function use_ques(ques, player){
         output_player(playerData[tempid]);
     }
     if (ques.id == 26){
-        var tempid = (player.id+1)%4;
-        for (var i=0 ; i<4 ; i++){
+        var tempid = (player.id+1)%playerData.length;
+        for (var i=0 ; i<playerData.length ; i++){
             if (playerData[i].name == player.name) continue;
             if (playerData[i].money > playerData[tempid].money) tempid = i;
         }
@@ -146,8 +146,8 @@ async function use_ques(ques, player){
         output_player(playerData[tempid]);
     }
     if (ques.id == 27){
-        var tempid = (player.id+1)%4;
-        for (var i=0 ; i<4 ; i++){
+        var tempid = (player.id+1)%playerData.length;
+        for (var i=0 ; i<playerData.length ; i++){
             if (playerData[i].name == player.name) continue;
             if (playerData[i].shield + playerData[i].dice.length + playerData[i].buff.length > playerData[tempid].shield + playerData[tempid].dice.length + playerData[tempid].buff.length) tempid = i;
         }
